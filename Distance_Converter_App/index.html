@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 10px;
+            
+            
+        }
+    </style>
+    <title>Distance-Converter-App</title>
+</head>
+
+<body>
+    <div class="containe">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <hr>
+                <h1 class="display-4 text-center mb-3"><strong>Length-Converter</strong></h1>
+                <hr>
+                <form>
+                    <div class="from-group">
+                        <input type="number" id="meterinput" class="form-control form-control-lg mb-2"
+                            placeholder="Enter length in Meters">
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card bg-primary mb-2">
+                        <div class="card-block">
+                            <h4>Milimeters:</h4>
+                            <div id="milimeterOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-success mb-2">
+                        <div class="card-block">
+                            <h4>Centimeters:</h4>
+                            <div id="centimeterOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-warning mb-2">
+                        <div class="card-block">
+                            <h4>Inches:</h4>
+                            <div id="inchesOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-info mb-2">
+                        <div class="card-block">
+                            <h4>Feets:</h4>
+                            <div id="feetOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light mb-2">
+                        <div class="card-block">
+                            <h4>Yards:</h4>
+                            <div id="yardOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-danger mb-2">
+                        <div class="card-block">
+                            <h4>Kilometers:</h4>
+                            <div id="kilometerOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
