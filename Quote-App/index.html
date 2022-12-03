@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quote App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mx-4 my-4">
+        <div class="container text-center">
+            <i><h1 id="quotes"></h1></i>
+        </div>
+        <br>
+        <div class="container text-center">
+            <h3 id="author"></h3>
+        </div>
+        <br>
+        <br>
+        <div class="conatiner text-center">
+            <button class="btn btn-lg btn-dark text-center" id="quoteButton">Click to generate new quotes</button>
+        </div>
+    </div>
+
+
+    <script>
+        const quotes = document.getElementById("quotes");
+        const author = document.getElementById("author");
+        const quoteButton = document.getElementById("quoteButton");
+        let realData = "";
+
+        const getNewQuotes = () => {
+            let rnum = Math.floor(Math.random() * 1643);
+            quotes.innerText = `"${realData[rnum].text}"`;
+            if(realData[rnum].author == null){
+                author.innerText = "- Unknown";
+            }
+            else{
+                author.innerText = `- ${realData[rnum].author}`;
+            }
+        }
+
+        const getQuotes = async () => {
+            const api = "https://type.fit/api/quotes";
+            try{
+                let data = await fetch(api);
+                realData = await data.json();
+                getNewQuotes();
+            }
+            catch(error){
+
+            }
+        }
+        quoteButton.addEventListener("click", getNewQuotes);
+        getQuotes();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
